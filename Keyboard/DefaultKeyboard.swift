@@ -9,52 +9,58 @@
 func defaultKeyboard() -> Keyboard {
     let defaultKeyboard = Keyboard()
     
-    for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
-        let keyModel = Key(.character)
+    for key in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] {
+        let keyModel = Key(.specialCharacter)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: keyModel, row: 0, page: 0)
     }
     
-    for key in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
+    for key in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
         let keyModel = Key(.character)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: keyModel, row: 1, page: 0)
     }
     
-    let keyModel = Key(.shift)
-    defaultKeyboard.add(key: keyModel, row: 2, page: 0)
-    
-    for key in ["Z", "X", "C", "V", "B", "N", "M"] {
+    for key in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
         let keyModel = Key(.character)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: keyModel, row: 2, page: 0)
     }
     
+    let keyModel = Key(.shift)
+    defaultKeyboard.add(key: keyModel, row: 3, page: 0)
+    
+    for key in ["Z", "X", "C", "V", "B", "N", "M"] {
+        let keyModel = Key(.character)
+        keyModel.setLetter(key)
+        defaultKeyboard.add(key: keyModel, row: 3, page: 0)
+    }
+    
     let backspace = Key(.backspace)
-    defaultKeyboard.add(key: backspace, row: 2, page: 0)
+    defaultKeyboard.add(key: backspace, row: 3, page: 0)
     
     let keyModeChangeNumbers = Key(.modeChange)
     keyModeChangeNumbers.uppercaseKeyCap = "123"
     keyModeChangeNumbers.toMode = 1
-    defaultKeyboard.add(key: keyModeChangeNumbers, row: 3, page: 0)
+    defaultKeyboard.add(key: keyModeChangeNumbers, row: 4, page: 0)
     
     let keyboardChange = Key(.keyboardChange)
-    defaultKeyboard.add(key: keyboardChange, row: 3, page: 0)
+    defaultKeyboard.add(key: keyboardChange, row: 4, page: 0)
     
     let settings = Key(.settings)
-    defaultKeyboard.add(key: settings, row: 3, page: 0)
+    defaultKeyboard.add(key: settings, row: 4, page: 0)
     
     let space = Key(.space)
     space.uppercaseKeyCap = "space"
     space.uppercaseOutput = " "
     space.lowercaseOutput = " "
-    defaultKeyboard.add(key: space, row: 3, page: 0)
+    defaultKeyboard.add(key: space, row: 4, page: 0)
     
     let returnKey = Key(.return)
     returnKey.uppercaseKeyCap = "return"
     returnKey.uppercaseOutput = "\n"
     returnKey.lowercaseOutput = "\n"
-    defaultKeyboard.add(key: returnKey, row: 3, page: 0)
+    defaultKeyboard.add(key: returnKey, row: 4, page: 0)
     
     for key in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] {
         let keyModel = Key(.specialCharacter)
